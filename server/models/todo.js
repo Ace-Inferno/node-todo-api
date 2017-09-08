@@ -16,5 +16,5 @@ var Todo = mongoose.model('Todo', {
     default: null
   }
 });
-//expoert otherwise we cant use it in files that require this one
+//export otherwise we cant use it in files that require this one
 module.exports = {Todo};
