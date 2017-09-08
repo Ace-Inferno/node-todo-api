@@ -25,12 +25,14 @@ describe('POST /todos', () => {
         }
 
         Todo.find().then((todos) => {
+          //always wiping database so the correct value is one
           expect(todos.length).toBe(1);
           expect(todos[0].text).toBe(text);
           done();
         }).catch((e) => done(e));
       });
   });
+
   it('should not create todo with invalid body data', (done) => {
     request(app)
     .post('/todos')
