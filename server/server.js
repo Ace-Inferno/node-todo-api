@@ -7,7 +7,9 @@ var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
 
 var app = express();
-
+const port = process.env.PORT || 3000;
+//take middleware make a single callback to bodyParser which will turn
+//the json into an object to be used in req, returned value is a function
 app.use(bodyParser.json());
 
 app.post('/todos', (req, res) => {
@@ -15,8 +17,9 @@ app.post('/todos', (req, res) => {
   var todo = new Todo({
     text: req.body.text
   });
-
+  //save the model to the database, callback for success and error
   todo.save().then((doc) => {
+    //sends http response and sets the other properties in todo
     res.send(doc);
   }, (e) => {
     res.status(400).send(e);
@@ -42,15 +45,15 @@ app.get('/todos/:id', (req, res) => {
     if(!todo){
       return res.status(404).send();
     }
-    
+
     res.send({todo});
   }).catch((e) => {
     res.status(400).send();
   });
 });
 
-app.listen(3000, () => {
-  console.log("Started on port 3000");
+app.listen(port, () => {
+  console.log(`Started on port ${port}`);
 });
 
 module.exports = {app};
