@@ -121,7 +121,11 @@ describe('DELETE /todos/:id', () => {
           expect(todo).toNotExist();
           done();
         }).catch((e)=> done(e));
+<<<<<<< HEAD
       });
+=======
+    });
+>>>>>>> cfb4ddaa92dafcc1f27cfca8b868133e9f144cb8
   });
 
   it('should return 404 if todo not found', (done) =>{
