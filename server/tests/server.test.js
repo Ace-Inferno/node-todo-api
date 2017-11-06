@@ -119,7 +119,11 @@ describe('DELETE /todos/:id', () => {
         Todo.findById(hexId).then((todo) => {
           expect(todo).toNotExist();
           done();
+<<<<<<< HEAD
         }).catch((e) => done(e));
+=======
+        }).catch((e)=> done(e));
+>>>>>>> parent of 5175a0a... Add PATCH/todos/:id
       });
   });
 
