@@ -97,13 +97,6 @@ app.patch('/todos/:id', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
-<<<<<<< HEAD
-  var body = _.pick(req.body, ['email', 'password']);
-  var user = new User(body);
-
-  user.save().then((user) => {
-    res.send(user);
-=======
   var body = _.pick(req.body, ['email','password']);
   var user = new User(body);
 //then passing in user
@@ -112,12 +105,11 @@ app.post('/users', (req, res) => {
     //res.send(user);
   }).then((token) => {
     res.header('x-auth', token).send(user);
->>>>>>> 4a64980fd65e1843422616039b393d80e4640264
   }).catch((e) => {
     res.status(400).send(e);
   })
 });
-<<<<<<< HEAD
+
 
 =======
 >>>>>>> 4a64980fd65e1843422616039b393d80e4640264
