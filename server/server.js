@@ -110,10 +110,6 @@ app.post('/users', (req, res) => {
   })
 });
 
-
-=======
->>>>>>> 4a64980fd65e1843422616039b393d80e4640264
-
 app.listen(port, () => {
   console.log(`Started on port ${port}`);
 });
